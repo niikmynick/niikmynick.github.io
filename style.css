@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #0D090A;
+    margin: 0;
+    overflow: hidden;
+}
+
+#minimal-logo {
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-block {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
