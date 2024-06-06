@@ -1,22 +1,95 @@
 body {
-    height: 100vh;
+    height: 300vh;
     width: 100vw;
     background-color: #0D090A;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    overflow: scroll;
+
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+#tip {
+    opacity: 50%;
+}
+
+header {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 #minimal-logo {
     display: block;
     margin: auto;
     position: absolute;
+    z-index: 1000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.center-block {
-    position: absolute;
-    height: 100vh;
+#welcome-div {
+    position: relative;
+    height: 200vh;
     width: 100vw;
+}
+
+#welcome-content {
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    top: 25%;
+}
+
+#menu-content {
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.menu-item {
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.menu-item.selected::before {
+    content: '> ';
+}
+
+footer {
+    position: relative;
+
+    font-size: 1em;
+    font-weight: normal;
+
+    text-align: center;
+
+    padding: 1em;
 }
