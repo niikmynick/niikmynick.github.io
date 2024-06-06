@@ -95,8 +95,13 @@
         console.log(navigator.userAgent)
 
         if (isMobile) {
+            // change styles
+            document.getElementsByClassName("h1").style.fontSize = "3em";
+            document.getElementsByClassName("h2").style.fontSize = "1.5em";
+
             document.querySelector('#tip').innerHTML = '<br>Choose for navigation';
             document.querySelector('#items').innerHTML = '<h1>person</h1><h1>programming</h1><h1>music</h1><h1>other</h1>';
+
             options.particles.move.speed.min = 0.5;
             options.particles.move.speed.max = 1.5;
             options.particles.size.value.min = 0.5;
