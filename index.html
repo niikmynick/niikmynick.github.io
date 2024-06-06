@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>niik</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="static/logo_black_on_white.ico">
@@ -43,58 +44,51 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
 <script type="text/javascript">
-      const options = {
-          smooth: true,
-          fullScreen: {
-              enable: false
-          },
-          background: {
-          // color: "#000",
-          },
-          interactivity: {
-              events: {
-                  onClick: {
-                      enable: true,
-                      mode: "push",
-                  },
-                  onHover: {
-                      enable: true,
-                      mode: "grab",
-                  },
-              },
-              modes: {
-                  push: {
-                      quantity: 3,
-                  },
-                  grab: {
-                      distance: 150,
-                  },
-              },
-          },
-          particles: {
-              links: {
-                  enable: true,
-                  opacity: 0.3,
-                  distance: 200,
-              },
-              move: {
-                  enable: true,
-                  speed: { min: 1, max: 3 },
-              },
-              opacity: {
-                  value: { min: 0.3, max: 0.7 },
-              },
-              size: {
-                  value: { min: 1, max: 3 },
-              },
-          },
-      };
+    let options = {
+        smooth: true,
+        fullScreen: {
+            enable: false,
+            zIndex: -1,
+        },
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: true,
+                    mode: "push",
+                },
+                onHover: {
+                    enable: true,
+                    mode: "grab",
+                },
+            },
+            modes: {
+                push: {
+                    quantity: 3,
+                },
+                grab: {
+                    distance: 150,
+                },
+            },
+        },
+        particles: {
+            links: {
+                enable: true,
+                opacity: 0.3,
+                distance: 200,
+            },
+            move: {
+                enable: true,
+                speed: {min: 1, max: 3},
+            },
+            opacity: {
+                value: {min: 0.3, max: 0.7},
+            },
+            size: {
+                value: {min: 1, max: 3},
+            },
+        },
+    };
 
-      tsParticles.load("welcome-div", options);
-
-    </script>
-
-<script>
     document.addEventListener('DOMContentLoaded', (event) => {
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         console.log(isMobile)
@@ -103,8 +97,18 @@
         if (isMobile) {
             document.querySelector('#tip').innerHTML = '<br>Choose for navigation';
             document.querySelector('#items').innerHTML = '<h1>person</h1><h1>programming</h1><h1>music</h1><h1>other</h1>';
+            options.particles.move.speed.min = 0.5;
+            options.particles.move.speed.max = 1.5;
+            options.particles.size.value.min = 0.5;
+            options.particles.size.value.max = 1.5;
+            options.particles.links.distance = 150;
+            options.interactivity.modes.grab.distance = 100;
+
+            tsParticles.load("welcome-div", options);
             return
         }
+
+        tsParticles.load("welcome-div", options);
 
         let selectedIndex = 0;
         const items = document.querySelectorAll('.menu-item');

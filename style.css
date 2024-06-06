@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: scroll;
+    overflow-x: hidden;
 
     font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     color: #FFFFFF;
@@ -37,6 +38,9 @@ header {
     display: block;
     margin: auto;
     position: absolute;
+
+    width: 80%;
+
     z-index: 1000;
     left: 50%;
     top: 50%;
@@ -92,4 +96,18 @@ footer {
     text-align: center;
 
     padding: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-item {
+        padding-top: 10px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
 }
