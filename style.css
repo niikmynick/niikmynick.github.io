@@ -18,6 +18,12 @@ h1 {
 }
 
 h2 {
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+h3 {
     font-size: 2em;
     font-weight: bold;
     z-index: 1000;

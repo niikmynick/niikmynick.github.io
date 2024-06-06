@@ -22,9 +22,9 @@
         </div>
 
         <div id="menu-content">
-            <h2 id="tip">
+            <h3 id="tip">
                 use ↑ ↓ to navigate, enter to select
-            </h2>
+            </h3>
             <div id="items">
                 <ul class="menu">
                     <li class="menu-item selected">person</li>
@@ -95,7 +95,7 @@
         console.log(navigator.userAgent)
 
         if (isMobile) {
-            document.querySelector('#tip').innerHTML = '<h2 id="tip">Choose for navigation</h2>';
+            document.querySelector('#tip').innerHTML = 'Choose for navigation';
             document.querySelector('#items').innerHTML = '<h2>person</h2><h2>programming</h2><h2>music</h2><h2>other</h2>';
 
             options.particles.move.speed.min = 0.5;
