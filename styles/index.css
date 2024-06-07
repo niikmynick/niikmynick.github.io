@@ -93,6 +93,11 @@ header {
     content: '> ';
 }
 
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 footer {
     position: relative;
 

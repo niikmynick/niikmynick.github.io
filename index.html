@@ -21,19 +21,22 @@
             <h1>welcome to niik’s world</h1>
         </div>
 
-        <div id="menu-content">
-            <h3 id="tip">
-                use ↑ ↓ to navigate, enter to select
-            </h3>
-            <div id="items">
-                <ul class="menu">
-                    <li class="menu-item selected">person</li>
-                    <li class="menu-item">programming</li>
-                    <li class="menu-item">music</li>
-                    <li class="menu-item">other</li>
-                </ul>
+        <a id="menu-object">
+            <div id="menu-content">
+                <h3 id="tip">
+                    use ↑ ↓ to navigate, enter to select
+                </h3>
+                <div id="items">
+                    <ul class="menu">
+                        <li class="menu-item selected"><a href="pages/about.html">person</a></li>
+                        <li class="menu-item"><a href="pages/programming.html">programming</a></li>
+                        <li class="menu-item"><a href="pages/music.html">music</a></li>
+                        <li class="menu-item"><a href="pages/other.html">other</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </a>
+
     </div>
 
     <footer>
@@ -91,12 +94,13 @@
 
     document.addEventListener('DOMContentLoaded', (event) => {
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        console.log(isMobile)
-        console.log(navigator.userAgent)
 
         if (isMobile) {
             document.querySelector('#tip').innerHTML = 'tap for navigation';
-            document.querySelector('#items').innerHTML = '<h2>person</h2><h2>programming</h2><h2>music</h2><h2>other</h2>';
+            document.querySelector('#items').innerHTML = '<h2><a href="pages/about.html">person</a></h2>' +
+                '<h2><a href="pages/programming.html">programming</a></h2>' +
+                '<h2><a href="pages/music.html">music</a></h2>' +
+                '<h2><a href="pages/other.html">other</a></h2>';
 
             options.particles.move.speed.min = 0.5;
             options.particles.move.speed.max = 1.5;
@@ -131,7 +135,10 @@
                 updateSelection();
             } else if (event.key === 'Enter') {
                 switch (items[selectedIndex].textContent) {
-                    case "person": window.location.replace("about.html")
+                    case "person": window.location.replace("./pages/about.html"); break;
+                    case "programming": window.location.replace("./pages/programming.html"); break;
+                    case "music": window.location.replace("./pages/music.html"); break;
+                    case "other": window.location.replace("./pages/other.html"); break;
                 }
                 // alert(`Selected: ${items[selectedIndex].textContent}`);
             }
