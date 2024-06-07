@@ -40,9 +40,9 @@
     </div>
 
     <footer>
-        <p id="theme">theme: dark</p>
+        <p id="theme">theme:</p>
         <p id="copyright">© 2024 niik </p>
-        <p id="lang">lang: en</p>
+        <p id="lang">lang:</p>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
@@ -100,6 +100,9 @@
                 setCookie(cookieName, baseCookieValues[cookieName], 3)
             }
         }
+
+        document.getElementById("theme").innerText += " " + getCookie("theme")
+        document.getElementById("lang").innerText += " " + getCookie("language")
 
         if (isMobile) {
             document.querySelector('#tip').innerHTML = 'tap for navigation';
