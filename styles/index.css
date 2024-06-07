@@ -101,11 +101,30 @@ a {
 footer {
     position: relative;
 
+    display: flex;
+    width: 100vw;
+    height: 6vh;
+
     font-size: 1em;
     font-weight: normal;
+}
 
-    text-align: center;
+#theme {
+    display: inline-block;
+    position: relative;
+    margin: auto 10em;
+    cursor: pointer;
+}
 
-    padding: 1em;
-    margin: 0;
+#copyright {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+}
+
+#lang {
+    display: inline-block;
+    position: relative;
+    margin: auto 10em;
+    cursor: pointer;
 }

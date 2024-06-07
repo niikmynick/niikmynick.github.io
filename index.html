@@ -40,12 +40,13 @@
     </div>
 
     <footer>
-        <div id="footer-content">
-            <p>© 2024 niik </p>
-        </div>
+        <p id="theme">theme: dark</p>
+        <p id="copyright">© 2024 niik </p>
+        <p id="lang">lang: en</p>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
+<script src="scripts/cookieUtils.js"></script>
 <script type="text/javascript">
     let options = {
         smooth: true,
@@ -94,6 +95,11 @@
 
     document.addEventListener('DOMContentLoaded', (event) => {
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        for (let cookieName of ["language", "theme", "chosen"]) {
+            if (!checkCookie(cookieName)) {
+                setCookie(cookieName, baseCookieValues[cookieName], 3)
+            }
+        }
 
         if (isMobile) {
             document.querySelector('#tip').innerHTML = 'tap for navigation';
@@ -115,12 +121,12 @@
 
         tsParticles.load("welcome-div", options);
 
-        let selectedIndex = 0;
+        let selectedIndex = parseInt(getCookie("chosen"));
         const items = document.querySelectorAll('.menu-item');
 
         const updateSelection = () => {
             items.forEach((item, index) => {
-            item.classList.toggle('selected', index === selectedIndex);
+                item.classList.toggle('selected', index === selectedIndex);
             });
         };
 
@@ -128,10 +134,12 @@
             if (event.key === 'ArrowDown') {
                 event.preventDefault();
                 selectedIndex = (selectedIndex + 1) % items.length;
+                setCookie("chosen", selectedIndex, 1)
                 updateSelection();
             } else if (event.key === 'ArrowUp') {
                 event.preventDefault();
                 selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+                setCookie("chosen", selectedIndex, 1)
                 updateSelection();
             } else if (event.key === 'Enter') {
                 switch (items[selectedIndex].textContent) {
@@ -140,7 +148,6 @@
                     case "music": window.location.replace("./pages/music.html"); break;
                     case "other": window.location.replace("./pages/other.html"); break;
                 }
-                // alert(`Selected: ${items[selectedIndex].textContent}`);
             }
         });
 
