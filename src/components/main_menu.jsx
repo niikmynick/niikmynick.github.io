@@ -1,8 +1,10 @@
 import React, { useEffect, useReducer } from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 
 export const MainMenu = () => {
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
     const addresses = ['/person', '/programming', '/music', '/other'];
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -45,22 +47,22 @@ export const MainMenu = () => {
         <a id="menu_object">
             <div id="menu-content">
                 <h3 id="tip">
-                    {isMobile ? 'tap for navigation' : 'use ↑ ↓ to navigate, enter to select'}
+                    {isMobile ? t("tap_navigation") : t("use_navigation")}
                 </h3>
-                <div id="items">
+                <div id="main-menu-items">
                     {isMobile ? (
                         <>
-                            <h2><Link to="/person">person</Link></h2>
-                            <h2><Link to="/programming">programming</Link></h2>
-                            <h2><Link to="/music">music</Link></h2>
-                            <h2><Link to="/other">other</Link></h2>
+                            <h2><Link to="/person">{t("person")}</Link></h2>
+                            <h2><Link to="/programming">{t("programming")}</Link></h2>
+                            <h2><Link to="/music">{t("music")}</Link></h2>
+                            <h2><Link to="/other">{t("other")}</Link></h2>
                         </>
                     ) : (
                         <ul className="menu">
-                            <li className={selectedItem === 0 ? 'menu-item selected' : 'menu-item'}><Link to="/person">person</Link></li>
-                            <li className={selectedItem === 1 ? 'menu-item selected' : 'menu-item'}><Link to="/programming">programming</Link></li>
-                            <li className={selectedItem === 2 ? 'menu-item selected' : 'menu-item'}><Link to="/music">music</Link></li>
-                            <li className={selectedItem === 3 ? 'menu-item selected' : 'menu-item'}><Link to="/other">other</Link></li>
+                            <li className={selectedItem === 0 ? 'menu-item selected' : 'menu-item'}><Link to="/person">{t("person")}</Link></li>
+                            <li className={selectedItem === 1 ? 'menu-item selected' : 'menu-item'}><Link to="/programming">{t("programming")}</Link></li>
+                            <li className={selectedItem === 2 ? 'menu-item selected' : 'menu-item'}><Link to="/music">{t("music")}</Link></li>
+                            <li className={selectedItem === 3 ? 'menu-item selected' : 'menu-item'}><Link to="/other">{t("other")}</Link></li>
                         </ul>
                     )}
                 </div>

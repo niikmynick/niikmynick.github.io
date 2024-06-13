@@ -28,9 +28,9 @@ export const applyTheme = (theme) => {
         } catch (e) {}
 
         try {
-            const projectCards = document.getElementsByClassName("project-card");
+            const projectCards = document.getElementsByClassName("item-card");
             Array.from(projectCards).forEach((element) => {
-                element.style.backgroundColor = "#111111";
+                element.style.backgroundColor = "#1e1e1e";
                 element.style.color = "#ffffff";
             });
         } catch (e) {}
@@ -64,7 +64,7 @@ export const applyTheme = (theme) => {
         } catch (e) {}
 
         try {
-            const projectCards = document.getElementsByClassName("project-card");
+            const projectCards = document.getElementsByClassName("item-card");
             Array.from(projectCards).forEach((element) => {
                 element.style.backgroundColor = "#f8f8f8";
                 element.style.color = "#000000";

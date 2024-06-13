@@ -1,6 +1,10 @@
+import i18n from "./i18n";
+
+
 export const applyLanguage = (language) => {
     const root = document.documentElement;
     root.setAttribute('lang', language);
+    i18n.changeLanguage(language)
 }
 
 export const changeLanguage = () => {
