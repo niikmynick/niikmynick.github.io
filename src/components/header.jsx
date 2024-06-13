@@ -6,9 +6,9 @@ import {MenuButton} from "./header_buttons/menu";
 export const Header = () => {
     return (
         <header id="header">
-            <BackButton />
+            {/*<BackButton />*/}
             <LogoButton />
-            <MenuButton />
+            {/*<MenuButton />*/}
         </header>
     )
 }

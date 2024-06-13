@@ -1,17 +1,7 @@
 import React from "react";
+import { ListItem } from "./listItem";
+import {useTranslation} from "react-i18next";
 
-const Project = ({ idx, name, description, stack, image }) => {
-    return (
-        <div key={idx} className="project-card">
-            <div className="project-info">
-                <h3 className="project-name">{name}</h3>
-                <p className="project-description">{description}</p>
-                <p className="project-stack"><strong>Stack:</strong> {stack}</p>
-            </div>
-            <img src={process.env.PUBLIC_URL + image} alt={name} className="project-image"/>
-        </div>
-    );
-};
 
 const projectData = [
     {
@@ -123,17 +113,19 @@ const projectData = [
 ];
 
 export const Projects = () => {
+    const { t, i18n } = useTranslation();
+
     return (
-        <div id="projects">
-            <h2>My Projects</h2>
-            <div id="projects-content">
+        <div id="items">
+            <h2>{t("projects-top")}</h2>
+            <div id="items-content">
                 {projectData.map((project, index) => (
                     <a key={index} href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        <Project
+                        <ListItem
                             key={index}
                             name={project.name}
                             description={project.description}
-                            stack={project.stack}
+                            info={project.stack}
                             image={project.image}
                         />
                     </a>
