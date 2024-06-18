@@ -24,9 +24,9 @@ export const Footer = () => {
 
     return (
         <footer>
-            <p onClick={handleThemeClick} id="theme">{t("theme")}: {t(theme)}</p>
+            {/*<p onClick={handleThemeClick} id="theme">{t("theme")}: {t(theme)}</p>*/}
             <p id="copyright">© 2024 niik </p>
-            <p onClick={handleLanguageClick} id="lang">{t("lang")}: {t(language)}</p>
+            {/*<p onClick={handleLanguageClick} id="lang">{t("lang")}: {t(language)}</p>*/}
         </footer>
     )
 }
