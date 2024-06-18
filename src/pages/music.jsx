@@ -6,9 +6,9 @@ import {initPage} from "../utils/page";
 import {MusicReleases} from "../components/music_releases";
 
 export const MusicPage = () => {
-    useEffect(() => {
-        initPage()
-    }, []);
+    // useEffect(() => {
+    //     initPage()
+    // }, []);
 
     const navigate = useNavigate();
 

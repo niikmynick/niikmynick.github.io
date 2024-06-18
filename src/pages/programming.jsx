@@ -6,9 +6,9 @@ import {initPage} from "../utils/page";
 import {Projects} from "../components/projects";
 
 export const ProgrammingPage = () => {
-    useEffect(() => {
-        initPage()
-    }, []);
+    // useEffect(() => {
+    //     initPage()
+    // }, []);
 
     const navigate = useNavigate();
 

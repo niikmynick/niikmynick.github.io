@@ -12,6 +12,10 @@ body {
     user-select: none;
 }
 
+#copyright {
+    opacity: 70%;
+}
+
 h1 {
     font-size: 4em;
     font-weight: bold;
@@ -266,10 +270,15 @@ a,a:hover, a:visited{
 
 
 
+
 #socials {
-    display: flex;
+    display: inline-block;
+    width: 100vw;
+    height: 6vh;
+    position: relative;
     justify-content: center;
     padding: 2vh 0;
+    margin: auto;
 }
 
 #socials-content {
@@ -390,7 +399,7 @@ footer {
 
 .item-image {
     max-width: 20em;
-    max-height: 20em;
+    max-height: 12em;
     border-radius: 8px;
     margin-bottom: 1em;
 }

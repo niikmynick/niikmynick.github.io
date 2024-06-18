@@ -3,11 +3,12 @@ import {Footer} from "../components/footer";
 import { useNavigate } from 'react-router-dom';
 import {Header} from "../components/header";
 import {initPage} from "../utils/page";
+import {Socials} from "../components/socials";
 
 export const OtherPage = () => {
-    useEffect(() => {
-        initPage()
-    }, []);
+    // useEffect(() => {
+    //     initPage()
+    // }, []);
 
     const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export const OtherPage = () => {
     return (
         <>
             <Header />
-
+            {/*<Socials />*/}
             <Footer />
         </>
 

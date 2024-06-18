@@ -33,7 +33,7 @@ const projectData = [
             "Additionally, the bot sends a report to the head of the team, providing information about each team member's progress." +
             "The bot is deployed in the Yandex Cloud Services.",
         stack: "Python, Aiogram, Google Sheets API",
-        image: "/yandex-task-reminder.png",
+        image: "/yandex_bot.png",
         githubLink: "https://github.com/niikmynick/reminderYandexBot"
     },
     {
@@ -42,7 +42,7 @@ const projectData = [
             "The bot is designed to collect and check votes from conference participants and to display the results in real-time. " +
             "The bot was deployed in the Yandex Cloud Services.",
         stack: "Python, Aiogram",
-        image: "/gazprom-vote-bot.png",
+        image: "/gazprom_vote.JPG",
         githubLink: "https://github.com/niikmynick/voteBotGazprom"
     },
     {
@@ -53,13 +53,13 @@ const projectData = [
         image: "/hr_bot.png",
         githubLink: ""
     },
-    {
-        name: "VK Meet Bot",
-        description: "A VK bot, developed to help people find each other using different filters such as city, age or any other",
-        stack: "Python, VK Api",
-        image: "/vk_meet.jpg",
-        githubLink: "https://github.com/niikmynick/vk_meet"
-    },
+    // {
+    //     name: "VK Meet Bot",
+    //     description: "A VK bot, developed to help people find each other using different filters such as city, age or any other",
+    //     stack: "Python, VK Api",
+    //     image: "/vk_meet.jpg",
+    //     githubLink: "https://github.com/niikmynick/vk_meet"
+    // },
     {
         name: "Stack machine with assembly-like language translator",
         description: "A stack machine with an assembler translator.",

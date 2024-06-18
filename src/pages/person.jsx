@@ -4,11 +4,12 @@ import {useNavigate} from 'react-router-dom';
 import {Header} from "../components/header";
 import {initPage} from "../utils/page";
 import {Timeline} from "../components/timeline";
+import {Socials} from "../components/socials";
 
 export const PersonPage = () => {
-    useEffect(() => {
-        initPage()
-    }, []);
+    // useEffect(() => {
+    //     initPage()
+    // }, []);
 
     const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ export const PersonPage = () => {
         <>
             <Header />
             <Timeline />
+            <Socials />
             <Footer />
         </>
 

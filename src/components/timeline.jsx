@@ -201,7 +201,7 @@ export const Timeline = () => {
                 },
                 {
                     title: "Time Again",
-                    description: "Released single 'Time Againe'"
+                    description: "Released single 'Time Again'"
                 },
             ]
         }

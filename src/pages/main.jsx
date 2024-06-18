@@ -8,9 +8,9 @@ import '../main.css';
 import {initPage} from "../utils/page";
 
 export const MainPage = () => {
-    useEffect(() => {
-        initPage()
-    }, []);
+    // useEffect(() => {
+    //     initPage()
+    // }, []);
 
     return (
         <>
