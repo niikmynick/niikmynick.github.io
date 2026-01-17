@@ -1,8 +1,3 @@
-/* 
- * БАЗОВЫЕ НАСТРОЙКИ 
- * Mobile-first: сначала стили для маленьких экранов, потом медиа-запросы для десктопа.
- */
-
 *,
 *::before,
 *::after {
@@ -51,7 +46,6 @@ body {
     --header-h: 64px;
 }
 
-/* Корневой контейнер страницы */
 .page {
     min-height: 100vh;
     max-width: 1200px;
@@ -67,11 +61,6 @@ a {
 button {
     font: inherit;
 }
-
-/* 
- * ШАПКА И НАВИГАЦИЯ 
- * На мобильных: логотип по центру, кнопка меню слева, ссылки скрыты.
- */
 
 .header {
     position: sticky;
@@ -94,14 +83,12 @@ button {
     position: relative;
 }
 
-/* Центрированный блок навигации и логотипа */
 .nav__center {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* Логотип в навигации */
 .nav__logo {
     display: inline-flex;
     align-items: center;
@@ -113,7 +100,6 @@ button {
     height: 18px;
 }
 
-/* Кнопка-бургер для мобильной навигации */
 .nav__toggle {
     display: inline-flex;
     flex-direction: column;
@@ -145,20 +131,13 @@ button {
     letter-spacing: 0.12em;
 }
 
-/* При открытом мобильном меню показываем ссылки рядом с логотипом */
 .nav.nav--open .nav__link {
     display: inline-flex;
 }
 
-/* 
- * ОСНОВНОЙ КОНТЕНТ
- */
-
 .main {
     padding-top: 0;
 }
-
-/* Hero-блок: на мобильных всё идёт вертикально */
 
 .hero {
     padding: 0;
@@ -207,7 +186,6 @@ button {
     gap: 20px;
 }
 
-/* Ссылки-стрелки, ведущие к секциям */
 .link-arrow {
     position: relative;
     font-size: 13px;
@@ -228,13 +206,8 @@ button {
     transform: translateX(4px);
 }
 
-/* 
- * СЕКЦИЯ ПРОЕКТОВ 
- */
-
 .projects {
     padding: 32px 0 16px;
-    /* Отступ при скролле к якорю, чтобы заголовок не прятался под шапкой */
     scroll-margin-top: 72px;
     min-height: 70vh;
 }
@@ -276,7 +249,6 @@ button {
     transform: translateX(4px);
 }
 
-/* Карточки проектов в один столбец для мобильных */
 .projects__grid {
     display: flex;
     flex-direction: column;
@@ -336,17 +308,11 @@ button {
     opacity: 0.9;
 }
 
-/* 
- * СЕКЦИЯ КОНТАКТОВ 
- * На мобильных — блоки друг под другом.
- */
-
 .contacts {
     padding: 12px 0 56px;
     display: flex;
     flex-direction: column;
     gap: 32px;
-    /* Аналогично для скролла к блоку контактов */
     scroll-margin-top: 72px;
 }
 
@@ -362,7 +328,6 @@ button {
     line-height: 1.2;
 }
 
-/* Стрелка из макета, связывающая текст с формой */
 .contacts__arrow {
     display: none;
     width: 100%;
@@ -380,11 +345,6 @@ button {
     font-size: 13px;
     opacity: 0.8;
 }
-
-/* 
- * ФОРМА ОБРАТНОЙ СВЯЗИ 
- * На мобильных — одна колонка.
- */
 
 .form {
     display: flex;
@@ -465,10 +425,6 @@ button {
     opacity: 0.9;
 }
 
-/* 
- * ПОДВАЛ 
- */
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -483,17 +439,11 @@ button {
     text-transform: lowercase;
 }
 
-/* 
- * ДЕСКТОПНЫЕ СТИЛИ (min-width)
- * Здесь мы приводим оформление к виду, как на макете.
- */
-
 @media (min-width: 600px) {
     .page {
         padding: 0 clamp(28px, 6vw, 48px) 32px;
     }
 
-    /* Сетка проектов: две колонки на средних экранах */
     .projects__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -522,7 +472,6 @@ button {
     .page {
         padding: 0 20px 32px;
     }
-    /* Хедер: бургер прячем, навигацию и логотип выравниваем по центру */
     .nav__toggle {
         display: none;
     }
@@ -545,7 +494,6 @@ button {
         padding-top: 0;
     }
 
-    /* Hero-блок ближе к макету: увеличиваем нижний отступ */
     .hero {
         padding: 0;
     }
@@ -559,7 +507,6 @@ button {
         margin-bottom: 40px;
     }
 
-    /* Секция проектов: расстояние до hero и до следующего блока */
     .projects {
         padding: 0 0 8px;
     }
@@ -581,7 +528,6 @@ button {
         justify-content: flex-end;
     }
 
-    /* Контакты: два столбца, как в десктопном макете */
     .contacts {
         padding: 12px 0 100px;
         flex-direction: row;
@@ -589,7 +535,6 @@ button {
         gap: 60px;
     }
 
-    /* Блок с формой смещаем вправо, выравнивая по правой границе контейнера */
     .contacts__right {
         margin-left: auto;
         width: 100%;
@@ -612,7 +557,6 @@ button {
         );
     }
 
-    /* Форма в две колонки */
     .form {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -628,7 +572,6 @@ button {
         justify-self: stretch;
     }
 
-    /* Подвал в одну строку */
     .footer {
         flex-direction: row;
         justify-content: space-between;
