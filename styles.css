@@ -63,8 +63,6 @@ button {
 }
 
 .header {
-    position: sticky;
-    top: 0;
     z-index: 10;
     background: linear-gradient(
         to bottom,
@@ -73,6 +71,11 @@ button {
         rgba(16, 14, 9, 0)
     );
     backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
 }
 
 .nav {
