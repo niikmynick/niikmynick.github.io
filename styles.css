@@ -63,6 +63,8 @@ button {
 }
 
 .header {
+    position: sticky;
+    top: 0;
     z-index: 10;
     background: linear-gradient(
         to bottom,
@@ -71,11 +73,8 @@ button {
         rgba(16, 14, 9, 0)
     );
     backdrop-filter: blur(8px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: block;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
 }
 
 .nav {
@@ -250,6 +249,10 @@ button {
 
 .section-link:hover .section-link__arrow {
     transform: translateX(4px);
+}
+
+.section-link--back:hover .section-link__arrow {
+    transform: translateX(-4px);
 }
 
 .projects__grid {
