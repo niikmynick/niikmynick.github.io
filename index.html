@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Индивидуальная разработка цифровых продуктов</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page" id="top">
+
+        <header class="header">
+            <nav class="nav">
+                <button class="nav__toggle" type="button" aria-label="Открыть меню">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__center">
+                    <a href="#projects" class="nav__link">проекты</a>
+
+                    <a href="#top" class="nav__logo" aria-label="На главную">
+                        <img src="public/logo.svg" alt="nik логотип" class="nav__logo-image">
+                    </a>
+
+                    <a href="#contacts" class="nav__link">контакты</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="hero">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        индивидуальная<br>
+                        разработка<br>
+                        цифровых продуктов
+                    </h1>
+
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <div class="hero__stat-value">6</div>
+                            <div class="hero__stat-label">лет</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-value">30+</div>
+                            <div class="hero__stat-label">проектов</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-value">21</div>
+                            <div class="hero__stat-label">клиент</div>
+                        </div>
+                    </div>
+
+                    <div class="hero__actions">
+                        <a href="#projects" class="link-arrow">проекты</a>
+                        <a href="#contacts" class="link-arrow">контакты</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <div class="section-header">
+                    <h2 class="section-title">проекты</h2>
+                </div>
+
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <h3 class="project-card__title">step</h3>
+                        <p class="project-card__description">
+                            система обучения (группа telegram ботов, система 
+                            мониторинга и управления, служба поддержки с обученной моделью, интеграция сервисов оплаты)
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">python</span>
+                            <span class="tag">next.js</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-card__title">gensher</h3>
+                        <p class="project-card__description">
+                            платформа мебельного бренда (каталог, 3д конфигуратор, сервис заявок)
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">next.js</span>
+                            <span class="tag">python</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-card__title">ИТМО</h3>
+                        <p class="project-card__description">
+                            разработка внутренней сервисной экосистемы университета.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">python</span>
+                            <span class="tag">next.js</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-card__title">газпром</h3>
+                        <p class="project-card__description">
+                            автоматизация бизнес-процессов, интеграция с внешними сервисами.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">python</span>
+                            <span class="tag">react</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-card__title">яндекс</h3>
+                        <p class="project-card__description">
+                            системы трекинга задач, аналитика и управление продуктом.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">go</span>
+                            <span class="tag">react</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-card__title">гос структуры</h3>
+                        <p class="project-card__description">
+                            автоматизация регламентов и аналитика для гос.организаций.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">python</span>
+                            <span class="tag">vue</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects__more">
+                    <button class="section-link" type="button">
+                        смотреть другие
+                        <span class="section-link__arrow">→</span>
+                    </button>
+                </div>
+            </section>
+
+            <section id="contacts" class="contacts">
+                <div class="contacts__left">
+                    <h2 class="contacts__title">создадим<br>уникальный продукт<br>вместе?</h2>
+                    <img src="public/arrow.svg" alt="" class="contacts__arrow">
+                </div>
+
+                <div class="contacts__right">
+                    <h3 class="contacts__form-title">написать сообщение</h3>
+                    <p class="contacts__form-text">
+                        заполните форму, и наша команда свяжется с вами в течение 24 часов
+                    </p>
+
+                    <form class="form" id="contact-form">
+                        <label class="form__field">
+                            <span class="form__label">имя</span>
+                            <input type="text" name="name" class="form__input" required>
+                        </label>
+
+                        <label class="form__field">
+                            <span class="form__label">телеграм или email</span>
+                            <input type="text" name="contact" class="form__input" required>
+                        </label>
+
+                        <label class="form__field form__field--full">
+                            <span class="form__label">текст сообщения</span>
+                            <textarea name="message" class="form__input form__input--textarea" rows="4" required></textarea>
+                        </label>
+
+                        <button type="submit" class="form__submit">
+                            отправить
+                        </button>
+
+                        <p class="form__success" id="form-success" aria-live="polite"></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span class="footer__copy">© 2026 nik</span>
+            <a href="https://t.me/niikmynick" target="_blank" rel="noopener" class="footer__link">
+                telegram
+            </a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
