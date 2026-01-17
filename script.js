@@ -14,21 +14,6 @@ document.addEventListener("click", function (event) {
     }
 });
 
-const nav = document.querySelector(".nav");
-const navToggle = document.querySelector(".nav__toggle");
-const navLinks = document.querySelectorAll(".nav__link");
-
-if (nav && navToggle) {
-    navToggle.addEventListener("click", function () {
-        nav.classList.toggle("nav--open");
-    });
-
-    navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-            nav.classList.remove("nav--open");
-        });
-    });
-}
 
 const form = document.getElementById("contact-form");
 const successMessage = document.getElementById("form-success");
