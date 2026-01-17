@@ -1,0 +1,637 @@
+/* 
+ * БАЗОВЫЕ НАСТРОЙКИ 
+ * Mobile-first: сначала стили для маленьких экранов, потом медиа-запросы для десктопа.
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "ALS Gorizont";
+    src: url("public/font/ALS Gorizont/ALSGorizont-RegularExpanded.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ALS Gorizont";
+    src: url("public/font/ALS Gorizont/ALSGorizont-MediumExpanded.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ALS Gorizont";
+    src: url("public/font/ALS Gorizont/ALSGorizont-BoldExpanded.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "ALS Gorizont", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #100E09;
+    color: #F5F4EB;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --header-h: 64px;
+}
+
+/* Корневой контейнер страницы */
+.page {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 8vw, 40px) 24px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* 
+ * ШАПКА И НАВИГАЦИЯ 
+ * На мобильных: логотип по центру, кнопка меню слева, ссылки скрыты.
+ */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(
+        to bottom,
+        rgba(16, 14, 9, 0.98),
+        rgba(16, 14, 9, 0.8),
+        rgba(16, 14, 9, 0)
+    );
+    backdrop-filter: blur(8px);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0 16px;
+    position: relative;
+}
+
+/* Центрированный блок навигации и логотипа */
+.nav__center {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Логотип в навигации */
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__logo-image {
+    display: block;
+    height: 18px;
+}
+
+/* Кнопка-бургер для мобильной навигации */
+.nav__toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 244, 235, 0.4);
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav__toggle-line {
+    width: 14px;
+    height: 1px;
+    background: #F5F4EB;
+    margin: 0 auto;
+}
+
+.nav__link {
+    display: none;
+    font-size: 12px;
+    text-transform: lowercase;
+    letter-spacing: 0.12em;
+}
+
+/* При открытом мобильном меню показываем ссылки рядом с логотипом */
+.nav.nav--open .nav__link {
+    display: inline-flex;
+}
+
+/* 
+ * ОСНОВНОЙ КОНТЕНТ
+ */
+
+.main {
+    padding-top: 0;
+}
+
+/* Hero-блок: на мобильных всё идёт вертикально */
+
+.hero {
+    padding: 0;
+    min-height: 100vh;
+    display: block;
+}
+
+.hero__content {
+    display: grid;
+    grid-template-rows: 50vh auto;
+    grid-auto-rows: auto;
+}
+
+.hero__title {
+    margin: 0 0 24px;
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 500;
+    text-transform: lowercase;
+    align-self: end;
+}
+
+.hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.hero__stat-value {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.hero__stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Ссылки-стрелки, ведущие к секциям */
+.link-arrow {
+    position: relative;
+    font-size: 13px;
+    text-transform: lowercase;
+    letter-spacing: 0.12em;
+    padding-right: 22px;
+}
+
+.link-arrow::after {
+    content: "→";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.2s ease;
+}
+
+.link-arrow:hover::after {
+    transform: translateX(4px);
+}
+
+/* 
+ * СЕКЦИЯ ПРОЕКТОВ 
+ */
+
+.projects {
+    padding: 32px 0 16px;
+    /* Отступ при скролле к якорю, чтобы заголовок не прятался под шапкой */
+    scroll-margin-top: 72px;
+    min-height: 70vh;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 18px;
+    text-transform: lowercase;
+}
+
+.section-link {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: lowercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    opacity: 0.8;
+    padding: 4px 0;
+}
+
+.section-link__arrow {
+    transition: transform 0.2s ease;
+}
+
+.section-link:hover .section-link__arrow {
+    transform: translateX(4px);
+}
+
+/* Карточки проектов в один столбец для мобильных */
+.projects__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.projects__more {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-card {
+    border-radius: 20px;
+    border: 1px solid rgba(245, 244, 235, 0.2);
+    padding: 18px 20px;
+    background: radial-gradient(circle at top left, rgba(245, 244, 235, 0.06), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(245, 244, 235, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(16, 14, 9, 0.6);
+}
+
+.project-card__title {
+    margin: 0 0 8px;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.project-card__description {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    border-radius: 999px;
+    border: 1px solid rgba(245, 244, 235, 0.3);
+    padding: 4px 10px;
+    font-size: 10px;
+    text-transform: lowercase;
+    letter-spacing: 0.12em;
+    opacity: 0.9;
+}
+
+/* 
+ * СЕКЦИЯ КОНТАКТОВ 
+ * На мобильных — блоки друг под другом.
+ */
+
+.contacts {
+    padding: 12px 0 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    /* Аналогично для скролла к блоку контактов */
+    scroll-margin-top: 72px;
+}
+
+.contacts__subtitle {
+    margin: 0 0 8px;
+    text-transform: lowercase;
+    opacity: 0.8;
+}
+
+.contacts__title {
+    margin: 0 0 24px;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+/* Стрелка из макета, связывающая текст с формой */
+.contacts__arrow {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.contacts__form-title {
+    margin: 0 0 8px;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.contacts__form-text {
+    margin: 0 0 20px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* 
+ * ФОРМА ОБРАТНОЙ СВЯЗИ 
+ * На мобильных — одна колонка.
+ */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.form__label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.form__input {
+    background: transparent;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 244, 235, 0.3);
+    padding: 10px 14px;
+    color: inherit;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    width: 100%;
+}
+
+.form__input--textarea {
+    border-radius: 18px;
+    min-height: 80px;
+    resize: vertical;
+    width: 100%;
+}
+
+.form__input:focus {
+    border-color: rgba(245, 244, 235, 0.8);
+    background-color: rgba(245, 244, 235, 0.03);
+}
+
+.form__submit {
+    margin-top: 4px;
+    background: transparent;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 244, 235, 0.7);
+    padding: 10px 18px;
+    color: inherit;
+    font: inherit;
+    text-transform: lowercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.form__submit:hover {
+    background-color: rgba(245, 244, 235, 0.9);
+    color: #100E09;
+    border-color: transparent;
+}
+
+.form__success {
+    margin: 6px 0 0;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.form__success--visible {
+    opacity: 0.9;
+}
+
+/* 
+ * ПОДВАЛ 
+ */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    opacity: 0.7;
+    padding-top: 14px;
+}
+
+.footer__link {
+    text-transform: lowercase;
+}
+
+/* 
+ * ДЕСКТОПНЫЕ СТИЛИ (min-width)
+ * Здесь мы приводим оформление к виду, как на макете.
+ */
+
+@media (min-width: 600px) {
+    .page {
+        padding: 0 clamp(28px, 6vw, 48px) 32px;
+    }
+
+    /* Сетка проектов: две колонки на средних экранах */
+    .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .hero__title {
+        font-size: clamp(32px, 5vw, 40px);
+    }
+
+    .hero__stats {
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+
+    .projects__more {
+        margin-top: 24px;
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        --header-h: 96px;
+    }
+    .page {
+        padding: 0 20px 32px;
+    }
+    /* Хедер: бургер прячем, навигацию и логотип выравниваем по центру */
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav {
+        padding: 24px 0 32px;
+        justify-content: center;
+    }
+
+    .nav__link {
+        display: inline-flex;
+        font-size: 13px;
+    }
+
+    .nav__center {
+        gap: 72px;
+    }
+
+    .main {
+        padding-top: 0;
+    }
+
+    /* Hero-блок ближе к макету: увеличиваем нижний отступ */
+    .hero {
+        padding: 0;
+    }
+
+    .hero__title {
+        font-size: clamp(40px, 5vw, 52px);
+    }
+
+    .hero__stats {
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    /* Секция проектов: расстояние до hero и до следующего блока */
+    .projects {
+        padding: 0 0 8px;
+    }
+
+    .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .project-card {
+        border-radius: 24px;
+        padding: 20px 24px;
+        min-height: 160px;
+    }
+
+    .projects__more {
+        margin-top: 28px;
+        justify-content: flex-end;
+    }
+
+    /* Контакты: два столбца, как в десктопном макете */
+    .contacts {
+        padding: 12px 0 100px;
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+    }
+
+    /* Блок с формой смещаем вправо, выравнивая по правой границе контейнера */
+    .contacts__right {
+        margin-left: auto;
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .contacts__title {
+        font-size: clamp(26px, 4vw, 32px);
+        margin-bottom: 40px;
+    }
+
+    .contacts__arrow {
+        display: block;
+        width: clamp(360px, 40vw, 520px);
+        max-width: none;
+        height: auto;
+        transform: translate(
+            clamp(24px, 6vw, 120px),
+            clamp(12px, 2vh, 36px)
+        );
+    }
+
+    /* Форма в две колонки */
+    .form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 20px;
+    }
+
+    .form__field--full {
+        grid-column: 1 / -1;
+    }
+
+    .form__submit {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+    }
+
+    /* Подвал в одну строку */
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
