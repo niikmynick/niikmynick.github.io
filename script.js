@@ -43,19 +43,19 @@ if (form && successMessage) {
         const message = formData.get("message")?.toString().trim();
 
         if (!name || !contact || !message) {
-            successMessage.textContent = "Пожалуйста, заполните все поля.";
+            successMessage.textContent = "пожалуйста, заполните все поля";
             successMessage.classList.add("form__success--visible");
             successMessage.style.color = "#F5F4EB";
             return;
         }
 
-        successMessage.textContent = "Отправка...";
+        successMessage.textContent = "отправка...";
         successMessage.classList.add("form__success--visible");
         successMessage.style.color = "#F5F4EB";
 
         const endpoint = form.dataset.endpoint;
         if (!endpoint) {
-            successMessage.textContent = "Эндпоинт отправки не настроен.";
+            successMessage.textContent = "отправка не настроена";
             return;
         }
 
@@ -69,14 +69,14 @@ if (form && successMessage) {
                 return res.json();
             })
             .then(() => {
-                successMessage.textContent = "Спасибо за сообщение! Я свяжусь с вами в ближайшее время.";
+                successMessage.textContent = "спасибо за сообщение! я свяжусь с вами в ближайшее время";
                 form.reset();
                 setTimeout(() => {
                     successMessage.classList.remove("form__success--visible");
                 }, 4000);
             })
             .catch(() => {
-                successMessage.textContent = "Ошибка отправки. Попробуйте позже.";
+                successMessage.textContent = "ошибка отправки. попробуйте позже";
             });
     });
 }
