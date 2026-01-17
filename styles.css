@@ -217,6 +217,10 @@ button {
     min-height: 70vh;
 }
 
+.projects--standalone {
+    margin-top: 16px;
+}
+
 .section-header {
     display: flex;
     justify-content: space-between;
